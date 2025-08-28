@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3rd Year Section-B Attendance Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1>3rd Year Section-B Attendance Dashboard</h1>
+        <p class="muted" id="lastUpdated">Loading…</p>
+      </div>
+      <div class="small-note">Auto-refresh every 30s</div>
+    </header>
+
+    <main>
+      <section class="cards" id="summaryCards">
+        <!-- Cards will be injected here -->
+      </section>
+
+      <section class="table-card">
+        <div class="table-header">
+          <h2>Students</h2>
+          <div id="searchWrap">
+            <input id="search" placeholder="Search name or roll..." />
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table id="studentsTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Total Present</th>
+                <th>Total Absent</th>
+                <th>Attendance %</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="studentsTbody">
+              <tr><td colspan="6" class="center muted">Loading data…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Design BY : SAURABH GUPTA </small>
+    </footer>
+  </div>
+
+  <!-- Profile panel -->
+  <div id="profileOverlay" class="overlay hidden" aria-hidden="true">
+    <div class="overlay-bg" id="overlayBg"></div>
+    <div class="profile-panel">
+      <button id="closeProfile" class="close-btn">Close ✕</button>
+      <div class="profile-header">
+        <h3 id="profileName">Name</h3>
+        <div id="profileRoll" class="muted">Roll No</div>
+      </div>
+
+      <div class="profile-stats" id="profileStats">
+        <!-- Total present/absent etc -->
+      </div>
+
+      <div class="subject-table-wrap">
+        <table id="profileSubjectsTable">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Classes Held</th>
+              <th>Present</th>
+              <th>Absent</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody id="profileSubjectsTbody"></tbody>
+        </table>
+      </div>
+
+      <div class="profile-footer">
+        <div id="overallAttendance"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
